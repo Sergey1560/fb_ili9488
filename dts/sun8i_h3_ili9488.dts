@@ -14,16 +14,13 @@
                         status = "okay";
 		        cs-gpios = <&pio 2 3 0>;			
 
-                        ili9486: ili9486@0 {
-                                compatible = "ilitek,ili9486";
+                        ili9488: ili9488@0 {
+                                compatible = "ilitek,ili9488";
                                 reg = <0>;
                                 spi-max-frequency = <4000000>;
                                 reset-gpios = <&pio 6 8 0>;
                                 dc-gpios = <&pio 6 9 0>;
                                 write-only;
-                                format = "b6x2g6x2r6x2";
-                                width-mm = <73>;
-                                height-mm = <49>;
                                 buswidth = <8>;
                                 rotation = <0>;
                         };
