@@ -1,0 +1,31 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+        compatible = "rockchip,rk3566";
+
+
+        fragment@0 {
+                target = <&spi3>;
+                __overlay__ {
+                        num-cs = <1>;
+                        #address-cells = <1>;
+                        #size-cells = <0>;
+                        status = "okay";
+                        panel: panel@0 {
+                                compatible = "ilitek,ili9486";
+                                reg = <0>;
+                                spi-max-frequency = <4000000>;
+                                reset-gpios = <&gpio4 7 1>;
+                                dc-gpios = <&gpio4 4 0>;
+                                write-only;
+                                format = "b6x2g6x2r6x2";
+                                width-mm = <73>;
+                                height-mm = <49>;
+                                buswidth = <8>;
+                                rotation = <0>;
+                        };
+                };
+
+        };
+};
